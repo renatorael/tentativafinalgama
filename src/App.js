@@ -13,16 +13,16 @@ function App() {
     <div className="App">
       <header>
         <nav>
-          <span>Gama Academy 2021</span>
+          <h3>Gama Academy 2021</h3>
         </nav>
       </header>
-      <section id="principal">
+      <section id="principal" className="section-container">
         <section id="logo">
-          <h1>Black Friday 2021!</h1>
+          <img src="assets/black-friday.png" alt="logo: Black Friday"/>
         </section>
-        <section id="lead">
+        <section id="lead" className="section-container">
           <form autoComplete="on">
-            <label>Cadastre seu melhor email e receba nossas ofertas da Black Friday!</label>
+            <label><strong>Cadastre seu melhor email e receba nossas ofertas da Black Friday!</strong></label>
             <br/>
             <input className="cliente" placeholder="Nome Sobrenome" onChange={e => setCliente(e.target.value) } />
             <input type="email"  className="email" placeholder="nome@email.com" onChange={e => setEmail(e.target.value) }  />
@@ -31,7 +31,7 @@ function App() {
         </section>
       </section>
       <footer>
-        <span>Renato @ 2021</span>
+        <p>Renato @ 2021 - Todos os direitos reservados.</p>
       </footer>
     </div>
   );
