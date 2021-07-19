@@ -1,7 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [cliente, setCliente] = useState('');
+  const [email, setEmail] = useState('');
+
+  function handleDados(){
+    localStorage.setItem('email', email);
+    localStorage.setItem('cliente', cliente);
+  }
+
   return (
     <div className="App">
       <header>
@@ -10,14 +17,18 @@ function App() {
         </nav>
       </header>
       <section id="principal">
-        <img src="http://midias.gazetaonline.com.br/_midias/jpg/2017/11/20/black_2951013_960_720-5379677.jpg" alt="logo" />
-      </section>
-      <section id="lead">
-        <form>
-          <input type="text" id="nome" placeholder="Nome Sobrenome" />
-          <input type="email" id="email" placeholder="nome@email.com" />
-          <input type="submit" id="enviar" value="enviar" />
-        </form>
+        <section id="logo">
+          <h1>Black Friday 2021!</h1>
+        </section>
+        <section id="lead">
+          <form autoComplete="on">
+            <label>Cadastre seu melhor email e receba nossas ofertas da Black Friday!</label>
+            <br/>
+            <input className="cliente" placeholder="Nome Sobrenome" onChange={e => setCliente(e.target.value) } />
+            <input type="email"  className="email" placeholder="nome@email.com" onChange={e => setEmail(e.target.value) }  />
+            <button type="button" onClick={handleDados}>Enviar</button>
+          </form>
+        </section>
       </section>
       <footer>
         <span>Renato @ 2021</span>
